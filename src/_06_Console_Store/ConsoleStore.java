@@ -1,5 +1,14 @@
 package _06_Console_Store;
 
+import java.util.Iterator;
+import java.util.Scanner;
+
+import _02_Generics_Store.Candy;
+import _02_Generics_Store.Cart;
+import _02_Generics_Store.Cereal;
+import _02_Generics_Store.Clothing;
+import _02_Generics_Store.Toy;
+
 public class ConsoleStore {
 
     /*
@@ -37,7 +46,60 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
-
+    	boolean keepShopping = true;
+    	int budget = 100;
+    	int totalSpent = 0;
+    	Scanner scan = new Scanner (System.in);
+    	Cart cart = new Cart ();
+    	do {
+    		System.out.println("Would you like to add items, remove items, view your items, or check out?");
+    		String input = scan.nextLine ();
+    		
+    		if (input.equalsIgnoreCase("add")) {
+    			System.out.println("What would you like to add? Options are:");
+    			System.out.println("Candy ($5)");
+    			System.out.println("Cereal ($10)");
+    			System.out.println("Clothing ($30)");
+    			System.out.println("Toy ($20)");
+    			String add = scan.nextLine();
+    			
+    			if (add.equals ("candy")) {
+    				cart.add(new Candy ());
+    			}else if (add.equals("cereal")) {
+    				cart.add(new Cereal ());
+    			}else if (add.equals ("clothing")) {
+    				cart.add(new Clothing ());
+    			}else if (add.equals ("toy")) {
+    				cart.add(new Toy ());
+    			}
+    		}else if (input.equals("remove")) {
+    			System.out.println("What would you like to remove? Type the number of the product");
+    			for (int i = 0; i < cart.length(); i++) {
+					System.out.println(i + ": " + cart.shopping.get(i).toString());
+				}
+    			int index = scan.nextInt();
+    			cart.remove(index);
+    		}else if (input.equals("view")) {
+    			cart.showCart();
+    		}else if (input.equals("check out")) {
+    			keepShopping = false;
+    		}
+    	}while (keepShopping);
+    	
+    	totalSpent = cart.totalPrice();
+    	
+    	if (totalSpent > budget) {
+    		System.out.println("You have spent too much, would you like to remove all items?");
+    		String removeAll = scan.nextLine();
+    		if (removeAll.contains("y")) {
+    			cart.shopping.clear();
+    		}
+    	}else {
+    		budget -= totalSpent;
+    		cart.showCart();
+    		cart.printCart();
+    		System.out.println(cart.totalPrice());
+    	}
     }
 
 }

@@ -12,11 +12,15 @@ public class Clothing extends NonFood{
 		else {
 			this.item = "clothing2.jpeg";
 		}
+		price = 30;
 	}
 
 	@Override
-	public JLabel getNonFood() {
+	public JLabel getProduct() {
 		// TODO Auto-generated method stub
 		return new JLabel(loadImage(this.item));
+	}
+	public String toString () {
+		return "Clothing";
 	}
 }

@@ -13,7 +13,7 @@ public class ScannerDemo {
     public static void main(String[] args) {
         /*
          * 1. Create an object of the Scanner class.
-         * 
+         
          * Note: You will need to pass System.in to the constructor(no quotes).
          * 
          * You might notice this looks similar to System.out which you use for
@@ -25,7 +25,7 @@ public class ScannerDemo {
          * are running your program or the input/output stream you are using.
          */
 
-        
+        Scanner scan = new Scanner (System.in);
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner
@@ -41,7 +41,11 @@ public class ScannerDemo {
          * Note: Don't forget to save the results of next() or nextLine() into a
          * String variable.
          */
-
+        System.out.println("What is your name");
+        
+        String input = scan.nextLine();
+        
+        
         
         
         /*
@@ -51,9 +55,9 @@ public class ScannerDemo {
          * See if you can find the scanner method that does this without relying
          * on Integer.parseInt().
          */
-
+        System.out.println("What is your age?");
         
-        
+        int age = scan.nextInt();
         /*
          * 4.) Try asking the user for another piece of information that's not a
          * String or an int.
@@ -63,15 +67,19 @@ public class ScannerDemo {
          */
 
         // 5.) Print the user's data to the console nicely formatted.
-
+        
+        System.out.println("What is the value of pi");
         
         
+        double pi = scan.nextDouble();
         /*
          * 6.) Close your scanner to avoid memory leaks.
          * 
          * Note: When using a Scanner with the System.in input stream in larger
          * programs only close the scanner when your program is completely done.
          */
+        
+        scan.close();
 
     }
 

@@ -11,16 +11,23 @@ public class GoShopping {
 	
 	public static void main(String[] args) {
 		// 2. Create a Cart object of type Candy
-		
-		// 3. Create another Cart object of type Cereal
-		
-		// 4. Add a few items to EACH cart
-		
-		
-		
-		
-		// 5. Call the showCart() method on EACH cart
-		
+//		Cart <Candy> candy = new Cart ();
+//		// 3. Create another Cart object of type Cereal
+//		Cart <Cereal> cereal = new Cart ();
+//		// 4. Add a few items to EACH cart
+//		candy.add(new Candy ());
+//		candy.add(new Candy ());
+//		candy.add(new Candy ());
+//		candy.add(new Candy ());
+//		cereal.add(new Cereal ());
+//		cereal.add(new Cereal ());
+//		cereal.add(new Cereal ());
+//		cereal.add(new Cereal ());
+//
+//		
+//		// 5. Call the showCart() method on EACH cart
+//		candy.showCart();
+//		cereal.showCart();
 		
 		// 6. Run the code
 		
@@ -28,7 +35,23 @@ public class GoShopping {
 		
 		// 8. Repeat steps 2-5 for a Clothing Cart and a Toy Cart
 		
+		Cart <Clothing> clothing = new Cart ();
+		// 3. Create another Cart object of type Cereal
+		Cart <Toy> toy = new Cart ();
+		// 4. Add a few items to EACH cart
+		clothing.add(new Clothing ());
+		clothing.add(new Clothing ());
+		clothing.add(new Clothing ());
+		clothing.add(new Clothing ());
+		toy.add(new Toy ());
+		toy.add(new Toy ());
+		toy.add(new Toy ());
+		toy.add(new Toy ());
+
 		
+		// 5. Call the showCart() method on EACH cart
+		clothing.showCart();
+		toy.showCart();
 		
 		
 		// Why are there errors?
